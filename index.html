@@ -1,0 +1,48 @@
+<DOCTYPE !html>
+<html>
+<head>
+	<title>React Standalone Test</title>
+
+	<style>
+		.button { display: block; padding: 1em 2em; }
+	</style>
+	
+	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+	<script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+</head>
+<body>
+	<div id="root"></div>
+	
+	<script type="text/babel">
+
+		const MyVar = function(props){
+			return(				
+				<p>{props.text}</p>
+			);
+		}
+
+		const SoundButton = function(props) {
+			function handleClick(props){
+
+				document.getElementById('sound1').play();
+			}
+
+			return(
+				<div>
+					<audio id="sound1" src={props.sound} preload="auto"></audio>
+					<button className="button" onClick={handleClick}>{props.button_label}</button>
+				</div>
+			);
+		};
+
+		const element = 
+		<div>
+			<p>React test</p>
+			<SoundButton button_label="woof" sound="http://c0026106.cdn1.cloudfiles.rackspacecloud.com/2fbc94686ceb434a864c0691906bd144_dog.mp3" />
+		</div>
+
+		ReactDOM.render(element, document.getElementById('root'));
+	</script>
+</body>
+</html>
