@@ -16,21 +16,20 @@
 	
 	<script type="text/babel">
 
-		const MyVar = function(props){
-			return(				
-				<p>{props.text}</p>
-			);
-		}
-
 		const SoundButton = function(props) {
-			function handleClick(props){
+			const [sound, playSound] = React.useState('');
 
+			const handleClick = function myfunction(event){
+				const audio = new Audio(props.sound)				
+				audio.play();
+
+				console.log(props.sound);			
 				document.getElementById('sound1').play();
 			}
 
 			return(
 				<div>
-					<audio id="sound1" src={props.sound} preload="auto"></audio>
+					<audio id="sound1" src={sound} preload="auto"></audio>
 					<button className="button" onClick={handleClick}>{props.button_label}</button>
 				</div>
 			);
@@ -40,6 +39,7 @@
 		<div>
 			<p>React test</p>
 			<SoundButton button_label="woof" sound="http://c0026106.cdn1.cloudfiles.rackspacecloud.com/2fbc94686ceb434a864c0691906bd144_dog.mp3" />
+			<SoundButton button_label="punch" sound="https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/sound1.wav" />
 		</div>
 
 		ReactDOM.render(element, document.getElementById('root'));
