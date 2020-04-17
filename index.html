@@ -2,8 +2,12 @@
 <html>
 <head>
 	<title>React Standalone Test</title>
+	
+	<link href="/styles/style.css" rel="stylesheet" />
 
 	<style>
+		h1 {}
+		.button-container { display: flex; }
 		.button { display: block; padding: 1em 2em; }
 	</style>
 	
@@ -37,9 +41,16 @@
 
 		const element = 
 		<div>
-			<p>React test</p>
-			<SoundButton button_label="woof" sound="http://c0026106.cdn1.cloudfiles.rackspacecloud.com/2fbc94686ceb434a864c0691906bd144_dog.mp3" />
-			<SoundButton button_label="punch" sound="https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/sound1.wav" />
+			<h1>React test</h1>
+			<p>Good resources</p>
+			<ul>
+				<li>https://stackoverflow.com/questions/47686345/playing-sound-in-reactjs</li>
+				<li>https://reactjs.org/docs/hooks-state.html</li>
+			</ul>
+			<div className="button-container">
+				<SoundButton button_label="woof" sound="http://c0026106.cdn1.cloudfiles.rackspacecloud.com/2fbc94686ceb434a864c0691906bd144_dog.mp3" />
+				<SoundButton button_label="punch" sound="https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/smack1.wav" />
+			</div>
 		</div>
 
 		ReactDOM.render(element, document.getElementById('root'));
