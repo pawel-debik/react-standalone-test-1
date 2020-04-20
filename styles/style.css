@@ -6,19 +6,18 @@
 /* General */
 body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-serif; }
 
-.wrapper { display: flex; }
+.wrapper > div { display: flex; flex-direction: column; }
 
 /* Soundboard */
-.soundboard { max-width: 960px; margin: auto; }
-.soundboard__header { display:block; text-align: center; color: #333; }
-.soundboard__elements {  }
+.soundboard { display: flex; flex-direction: column; max-width: 960px; margin: 0 auto 160px; }
+.soundboard__header { flex-grow: 1; width: 100%; display:block; text-align: center; color: #333; }
+.soundboard__elements { display: flex; flex-wrap: wrap; }
 .soundboard__button {  }
 
 
-.button-container { display: flex; }
-.button { display: block; padding: 2em; border: none; margin-right: 50px; font-size: 1rem; }
+.button { display: block; padding: 2em; border: none; margin: 0 50px 50px 0; font-size: 1rem; }
 .neu.button {
-	transition: all 0.2s;
+	transition: all 0.2s ease-out;
 	outline:none;
 	border-radius: 6px;
 	background: linear-gradient(to bottom right, var(--bg-color), #fff);

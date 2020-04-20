@@ -3,16 +3,16 @@
 <head>
 	<title>React Standalone Test</title>
 	
-	<link href="styles/style.css" rel="stylesheet" />
+	<link href = "styles/style.css" rel = "stylesheet" />
 	
-	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-	<script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+	<script src = "https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+	<script src = "https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+	<script src = "https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
 </head>
 <body>
-	<div id="root" class="wrapper"></div>
+	<div id = "root" class = "wrapper"></div>
 	
-	<script type="text/babel">
+	<script type = "text/babel">
 
 		const SoundButton = function(props) {
 			const [sound, playSound] = React.useState('');
@@ -27,24 +27,31 @@
 
 			return(
 				<div>
-					<audio id="sound1" src={sound} preload="auto"></audio>
-					<button className="neu button" onClick={handleClick}>{props.button_label}</button>
+					<audio id = "sound1" src={sound} preload = "auto"></audio>
+					<button className = "neu button" onClick={handleClick}>{props.button_label}</button>
 				</div>
 			);
 		};
 
 		const element = 
+		<div>
 		<div className = "soundboard">
-			<h1 className = "soundboard__header">React test</h1>
+			<h1 className = "soundboard__header">React Sound Board For Aiden</h1>
+			<div className = "soundboard__elements">
+				<SoundButton button_label = "woof" sound = "http://c0026106.cdn1.cloudfiles.rackspacecloud.com/2fbc94686ceb434a864c0691906bd144_dog.mp3" />
+				<SoundButton button_label = "punch" sound = "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/smack1.wav" />
+				<SoundButton button_label = "punch" sound = "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/smack1.wav" />
+				<SoundButton button_label = "punch" sound = "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/smack1.wav" />
+				<SoundButton button_label = "punch" sound = "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/smack1.wav" />
+			</div>
+		</div>
+		<div>
 			<p>Good resources</p>
 			<ul>
 				<li>https://stackoverflow.com/questions/47686345/playing-sound-in-reactjs</li>
 				<li>https://reactjs.org/docs/hooks-state.html</li>
 			</ul>
-			<div className="button-container">
-				<SoundButton button_label="woof" sound="http://c0026106.cdn1.cloudfiles.rackspacecloud.com/2fbc94686ceb434a864c0691906bd144_dog.mp3" />
-				<SoundButton button_label="punch" sound="https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/smack1.wav" />
-			</div>
+		</div>
 		</div>
 
 		ReactDOM.render(element, document.getElementById('root'));
