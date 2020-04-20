@@ -1,22 +1,16 @@
-<DOCTYPE !html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>React Standalone Test</title>
 	
-	<link href="/styles/style.css" rel="stylesheet" />
-
-	<style>
-		h1 {}
-		.button-container { display: flex; }
-		.button { display: block; padding: 1em 2em; }
-	</style>
+	<link href="styles/style.css" rel="stylesheet" />
 	
 	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
 	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 	<script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
 </head>
 <body>
-	<div id="root"></div>
+	<div id="root" class="wrapper"></div>
 	
 	<script type="text/babel">
 
@@ -34,14 +28,14 @@
 			return(
 				<div>
 					<audio id="sound1" src={sound} preload="auto"></audio>
-					<button className="button" onClick={handleClick}>{props.button_label}</button>
+					<button className="neu button" onClick={handleClick}>{props.button_label}</button>
 				</div>
 			);
 		};
 
 		const element = 
-		<div>
-			<h1>React test</h1>
+		<div className = "soundboard">
+			<h1 className = "soundboard__header">React test</h1>
 			<p>Good resources</p>
 			<ul>
 				<li>https://stackoverflow.com/questions/47686345/playing-sound-in-reactjs</li>
