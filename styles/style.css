@@ -30,4 +30,23 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
 	background: linear-gradient(to bottom right, var(--bg-color), rgba(255, 255, 255,0.7));
 	box-shadow: 5px 5px 16px rgb(163,177,198,0.1), -5px -5px 16px rgba(255,255,255, 0.6);
 }
+.neu.button.red {
+	border: solid rgba(255,0,0,0.2) 1px;
+}
 
+.soundboard__active-sound {
+	position: fixed;
+	top: 50vh;
+	width: 100%;
+	pointer-events:none;
+	text-align: center;
+	animation: fadein 2s;
+	animation-fill-mode: forwards;
+}
+
+.active-sound__label { font-size: 8rem; margin-top: -4rem; }
+
+@keyframes fadein {
+    0% { opacity: 1; }
+    100%   { opacity: 0; }
+}
