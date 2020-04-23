@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -21,6 +21,11 @@
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/breh.mp3', 'button_label': 'Breh'}, 
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/dubstep1.mp3', 'button_label': 'Dubstep'}
 				];
+			
+			const [bunchOfButtons, updateBunchOfButtons] = React.useState(buttonArraySmall);
+
+
+
 			
 			const doStuff = function(props){
 				changeLabel(props.button_label);
@@ -50,6 +55,11 @@
 				const [filter, setFilter] = React.useState();
 
 				const doFilter = function(e){
+
+				const items = buttonArraySmall.filter(item => item.button_label.indexOf(e.target.value) !== -1);
+
+				console.log(items);
+
 					/*
 					- get value from input
 					- map buttons to new variable (I guess)
@@ -70,7 +80,7 @@
 
 				return(
 					<React.Fragment>
-					{buttonArraySmall.map((data, i) => {
+					{bunchOfButtons.map((data, i) => {
 						return (<SoundButton key={i} style="neu button" button_label = {data.button_label} sound = {data.url} />) 
 					})}
 					</React.Fragment>
@@ -101,6 +111,7 @@
 				<div>
 					<p>Good resources</p>
 					<ul>
+						<li>re read this about input values and stata changes later:  https://upmostly.com/tutorials/react-onchange-events-with-examples</li>
 						<li>https://stackoverflow.com/questions/47686345/playing-sound-in-reactjs</li>
 						<li>https://reactjs.org/docs/hooks-state.html</li>
 					</ul>
