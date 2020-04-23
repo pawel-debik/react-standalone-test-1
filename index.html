@@ -41,12 +41,22 @@
 				);
 			};
 
+			const SoundBoardFilter = functions(props){
+
+				return(
+				<div className = "soundboard__filter">
+					<input className = "filter__searchfield" />
+				</div>
+				);
+			}
+
 			return(
 				<React.Fragment>				
 
 				<div className = "soundboard">
 					<h1 className = "soundboard__header">React Sound Board For Aiden</h1>
 					<ActiveTitle />
+					<SoundBoardFilter />
 					<div className = "soundboard__elements">
 						<SoundButton style="neu button" button_label = "Breh" sound = "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/breh.mp3" />
 						
