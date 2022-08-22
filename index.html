@@ -5,24 +5,41 @@
 	<title>React Standalone Test</title>
 	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0" />
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="manifest" href="manifest.json">
 	<script src = "https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
 	<script src = "https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 	<script src = "https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+	<script type = "text/babel">
+        /* * * * * * * * * * * * * * * * * * * */
+        /* SERVICEWORKER                       */
+        /* * * * * * * * * * * * * * * * * * * */
+        window.onload = () => {
+            'use strict';
+
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw.js');
+            }
+        }
+    </script>
 </head>
 <body>
 	<div id = "root" class = "wrapper"></div>
-	
+        
 	<script type = "text/babel">
-
 		const App = function(){
 			const [label, changeLabel] = React.useState();
 			const [titleClass, changeTitleClass] = React.useState('soundboard__active-sound');
 			const buttonArraySmall = [
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/rave.mp3', 'button_label': '21st Century Humor'}, 
+					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/rekt.mp3', 'button_label': 'Rekt'}, 
+					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/click-clack-blast.m4a', 'button_label': 'Click Clack Blast'}, 
+					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/mylittlepony.mp3', 'button_label': 'My little pony!'}, 
+					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/snakevenom.mp3', 'button_label': 'Snakevenom'}, 
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/yes-slap.mp3', 'button_label': 'Yes, slap'}, 
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/blabla.mp3', 'button_label': 'Alien bla'}, 
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/heatonem.mp3', 'button_label': 'Heat'}, 
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/breh.mp3', 'button_label': 'Breh'}, 
+					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/terminalmontage-monsterhunter4.mp3', 'button_label': 'Terminal Montage'}, 
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/dubstep1.mp3', 'button_label': 'Dubstep'}, 
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/easy.mp3', 'button_label': 'Easy!'},
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/huhwhatthe.mp3', 'button_label': 'Huh? What the...'},
