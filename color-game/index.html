@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Color Game</title>
+	<link rel="stylesheet" href="assets/css/opening-screen.css">
+	<link rel="stylesheet" href="../assets/css/reset.css">
+</head>
+<body>
+	<header>
+		<h1>Color</h1>	
+	</header>
+	<div class="container">
+		<div class="main-nav">
+			<a href="game-1/index.html" class="button launch-game-1">Race game</a>
+			<a class="button launch-game-2">game 2</a>
+			<a href="game-3/index.html" class="button launch-game-3">Score game</a>
+			<a href="game-4/index.html" class="button launch-game-4">Practice</a>
+		</div>
+		<button onclick="playAudio()" class="button toggle-bg-music-1">Play music</button>
+		<button onclick="pauseAudio()" class="button toggle-bg-music-2">Stop music</button>
+		<a href="../index.html">back to soundboard</a>
+	</div>
+
+	<audio id="myAudio">
+		<source src="assets/sounds/hip-hop.wav">
+	</audio>
+	
+	<script>
+		var x = document.getElementById("myAudio");
+
+		console.log(x); 
+
+		function playAudio() { 
+		  x.play(); 
+		} 
+
+		function pauseAudio() { 
+		  x.pause(); 
+		} 
+	</script>
+	
+	<script type="text/javascript" src="assets/js/live.js"></script>
+	<script type="text/javascript" src="assets/js/jquery361.js"></script>
+</body>
+</html>
