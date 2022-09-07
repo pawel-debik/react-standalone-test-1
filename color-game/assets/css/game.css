@@ -1,5 +1,21 @@
 .game-wrapper {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.container {
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+    height: 100%;
+	font-size: 2rem;
+	font-family: sans-serif;
 }
 
 .abs-nav {
@@ -66,18 +82,6 @@ button:hover,
 	position: absolute;
 	top: 1rem;
 	right: 1rem;
-	font-size: 2rem;
-	font-family: sans-serif;
-}
-
-.container {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100vw;
-	height: 100vw;
 	font-size: 2rem;
 	font-family: sans-serif;
 }

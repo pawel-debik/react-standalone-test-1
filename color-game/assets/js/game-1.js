@@ -41,7 +41,7 @@ $( document ).ready(function() {
     });
 
     function someFunction() {
-        if ( $('.color-input').val() == $currentColor ) {
+        if ( $('.color-input').val().toLowerCase() == $currentColor ) {
             $score++;
             $('.score').text($score);
         }
