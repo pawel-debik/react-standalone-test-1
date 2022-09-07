@@ -18,6 +18,14 @@
 	font-family: sans-serif;
 }
 
+.light-blue-bg {
+	background-color: lightblue;
+}
+
+.red-bg {
+	background-color: red;
+}
+
 .abs-nav {
 	position: relative;
 	display: flex;

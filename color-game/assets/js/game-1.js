@@ -51,6 +51,19 @@ $( document ).ready(function() {
     }
 
     function doSomething() {
+
+        if ( $('body').hasClass('game-1') ) {
+
+            if ( $score < 10 ) {
+                console.log($('.game-1'));
+                $('.game-1').addClass('red-bg');
+                alert('You lose. Retry.');
+            } else {
+                $('.game-1').addClass('light-blue-bg');
+                alert('You WIN!. Good job.');
+            }
+        }
+
         if ( $('body').hasClass('game-2') ) {
             if ( $score < 1 ) {
                 alert('You lose. Retry.');
