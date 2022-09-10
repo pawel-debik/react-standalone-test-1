@@ -4,11 +4,29 @@ $( document ).ready(function() {
     $currentColor = $colorArray[Math.floor(Math.random()*$colorArray.length)];
     $score = 0;
     var timeHandicap = 0;
-    var scoreHandicap = 0;
+    var scoreHandicap = 0; // to do: make this work
 
     var elem = document.querySelector('.timer');
     var gameTimer = setInterval(countdown, 1000);
     var isPaused = false;
+
+    var timeLeft = 30; // default value
+    var game1time = 30; // default value
+    var game2time = 30; // default value
+    var game3time = 120; // default value
+
+    // Timer
+    if ( $('body').hasClass('game-1') ) {
+        timeLeft = game1time;
+    }
+
+    if ( $('body').hasClass('game-2') ) {
+        timeLeft = game2time;
+    }
+
+    if ( $('body').hasClass('game-3') ) {
+        timeLeft = game3time;
+    }
 
     function countdown() {
         if ( !$('body').hasClass('game-4') ) {
@@ -23,7 +41,6 @@ $( document ).ready(function() {
             }
         }
     }
-
 
     // Set starting values
     $('.score').text($score);
@@ -65,16 +82,23 @@ $( document ).ready(function() {
         }
 
         if ( $('body').hasClass('game-2') ) {
-            if ( $score < 1 ) {
-                alert('You lose. Retry.');
+            $('.goal-score').text( parseInt($('.goal-score').text()) + scoreHandicap);
+
+            if ( $score - scoreHandicap < 10 ) {
+                if (confirm('You lose. Retry.')) {
+                    timeHandicap = 0;
+                    scoreHandicap = 0;
+                }
             } else {
+                timeLeft = game2time;
                 timeHandicap += 5;
                 scoreHandicap += 1;
 
-                if (confirm('You win. Try a harder level.')) {
-                    console.log('test');
+                if (confirm('You win. Get ready for a harder level.')) {
 
-                    gameTimer = timeLeft = 6 - timeHandicap;
+                    timeLeft = timeLeft - timeHandicap;
+
+                    gameTimer = setInterval(countdown, 1000);
                 }
             }
         }
@@ -96,19 +120,6 @@ $( document ).ready(function() {
                 alert('Score: A+');
             }
         }
-    }
-
-    // Timer
-    if ( $('body').hasClass('game-1') ) {
-        var timeLeft = 30;
-    }
-
-    if ( $('body').hasClass('game-2') ) {
-        var timeLeft = 6;
-    }
-
-    if ( $('body').hasClass('game-3') ) {
-        var timeLeft = 120;
     }
 
     //with jquery
