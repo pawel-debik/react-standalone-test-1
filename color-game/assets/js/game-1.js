@@ -12,10 +12,15 @@ $( document ).ready(function() {
 
     var timeLeft = 30; // default value
     var game1time = 30; // default value
-    var game2time = 30; // default value
+    var game2time = 90; // default value
     var game3time = 120; // default value
 
-    // Timer
+    var goalScore = 10; // default value
+
+    // Set initial goal score
+    $('.goal-score').text( parseInt($('.goal-score').text()) + scoreHandicap);
+
+    // Set initial time
     if ( $('body').hasClass('game-1') ) {
         timeLeft = game1time;
     }
@@ -28,6 +33,11 @@ $( document ).ready(function() {
         timeLeft = game3time;
     }
 
+    // Set starting values
+    $('.score').text($score);
+    $('.color-dot').addClass($currentColor);
+
+    // Countdown
     function countdown() {
         if ( !$('body').hasClass('game-4') ) {
             if(!isPaused) {
@@ -42,11 +52,6 @@ $( document ).ready(function() {
         }
     }
 
-    // Set starting values
-    $('.score').text($score);
-    $('.color-dot').addClass($currentColor);
-
-
     $(document).on('keypress',function(e) {
         if(e.which == 13) {
             someFunction();
@@ -54,6 +59,7 @@ $( document ).ready(function() {
     });
 
     $('.color-submit').click(function(e){
+        $('.color-input').val('');
         someFunction();
     });
 
@@ -82,9 +88,7 @@ $( document ).ready(function() {
         }
 
         if ( $('body').hasClass('game-2') ) {
-            $('.goal-score').text( parseInt($('.goal-score').text()) + scoreHandicap);
-
-            if ( $score - scoreHandicap < 10 ) {
+            if ( $score < goalScore ) {
                 if (confirm('You lose. Retry.')) {
                     timeHandicap = 0;
                     scoreHandicap = 0;
@@ -97,6 +101,13 @@ $( document ).ready(function() {
                 if (confirm('You win. Get ready for a harder level.')) {
 
                     timeLeft = timeLeft - timeHandicap;
+                    goalScore = goalScore + scoreHandicap;
+
+                    // update goal score
+                    $('.goal-score').text( parseInt($('.goal-score').text()) + scoreHandicap);
+
+                    // Update stage
+                    $('.stage-count').text( parseInt($('.stage-count').text()) + 1 );
 
                     gameTimer = setInterval(countdown, 1000);
                 }
