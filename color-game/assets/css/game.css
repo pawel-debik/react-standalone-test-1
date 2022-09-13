@@ -57,6 +57,11 @@ button,
 	background-color: gray;
 }
 
+.skip-level {
+	display: none;
+	background-color: aquamarine;
+}
+
 input {
 	font-size: 2rem;
 	font-family: sans-serif;

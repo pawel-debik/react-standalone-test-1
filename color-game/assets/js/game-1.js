@@ -63,14 +63,23 @@ $( document ).ready(function() {
         someFunction();
     });
 
-    function someFunction() {
-        if ( $('.color-input').val().toLowerCase() == $currentColor ) {
+    function someFunction() {if ( $('.color-input').val().toLowerCase() == $currentColor ) {
             $score++;
             $('.score').text($score);
         }
 
         $currentColor = $colorArray[Math.floor(Math.random()*$colorArray.length)];
         $('.color-dot').removeClass().addClass('color-dot ' + $currentColor);
+
+        // check to see if player has reached goal score before time runs out        
+        checkScore();
+    }
+
+    function checkScore() {
+        console.log('checking score');
+        if ( $score >= $('.goal-score').text() ) {
+            timeLeft = 0;
+        }
     }
 
     function doSomething() {
@@ -109,7 +118,11 @@ $( document ).ready(function() {
                     // Update stage
                     $('.stage-count').text( parseInt($('.stage-count').text()) + 1 );
 
+                    // reset timer
                     gameTimer = setInterval(countdown, 1000);
+
+                    // reset score
+                    $('.score').text('0');
                 }
             }
         }
