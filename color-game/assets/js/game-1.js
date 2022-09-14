@@ -77,7 +77,7 @@ $( document ).ready(function() {
 
     function checkScore() {
         console.log('checking score');
-        if ( $score >= $('.goal-score').text() ) {
+        if ( $score >= goalScore ) {
             timeLeft = 0;
         }
     }
@@ -92,7 +92,7 @@ $( document ).ready(function() {
                 alert('You lose. Retry.');
             } else {
                 $('.game-1').addClass('light-blue-bg');
-                alert('You WIN!. Good job.');
+                alert('You WIN! Good job.');
             }
         }
 
@@ -123,6 +123,7 @@ $( document ).ready(function() {
 
                     // reset score
                     $('.score').text('0');
+                    $score = 0;
                 }
             }
         }
