@@ -31,6 +31,7 @@ $( document ).ready(function() {
 
     if ( $('body').hasClass('game-3') ) {
         timeLeft = game3time;
+        goalScore = 99999;
     }
 
     // Set starting values
@@ -85,9 +86,7 @@ $( document ).ready(function() {
     function doSomething() {
 
         if ( $('body').hasClass('game-1') ) {
-
             if ( $score < 10 ) {
-                console.log($('.game-1'));
                 $('.game-1').addClass('red-bg');
                 alert('You lose. Retry.');
             } else {
