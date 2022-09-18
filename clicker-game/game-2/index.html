@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>	</title>
+
+	<link rel="stylesheet" href="../assets/css/game.css">
+	<link rel="stylesheet" href="../assets/css/reset.css">
+</head>
+<body class="game-2">
+	<div class="game-wrapper">
+		<div class="abs-nav">
+			<button class="pause-game game-button button">pause</button>
+			<button class="resume-game game-button button">Resume</button>
+			<a href="../index.html" class="main-menu button">Main menu</a>
+			<div class="score-and-timer">
+				<p class="timer">30</p>
+				<div class="score-wrapper">
+					<span class="score">NUM</span>
+					<span>/</span>
+					<span class="goal-score">10</span>
+				</div>
+				<button class="skip-level button">Go to next level</button>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="color-wrapper">
+				<p class="color-label">Color: </p>
+				<div class="color-dot">o</div>
+			</div>
+			<div class="color-wrapper">
+				<input type="text" class="color-input" name="fname"><br><br>
+				<button class="color-submit">Submit</button>
+			</div>
+			<div class="stage-wrapper">
+				<p class="stage-label">Stage:</p>
+				<p class="stage-count">1</p>
+			</div>
+		</div>
+		<div class="overlay"></div>
+	</div>
+
+	<script type="text/javascript" src="../assets/js/live.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery361.js"></script>
+	<script type="text/javascript" src="../assets/js/game-1.js"></script>
+</body>
+</html>

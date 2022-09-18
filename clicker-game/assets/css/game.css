@@ -1,0 +1,162 @@
+.game-wrapper {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+h1 {
+	text-align: center;
+	font-size: 5rem;
+}
+
+.container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+    height: 100%;
+	font-size: 2rem;
+	font-family: sans-serif;
+}
+
+.light-blue-bg {
+	background-color: lightblue;
+}
+
+.red-bg {
+	background-color: red;
+}
+
+.abs-nav {
+	position: relative;
+	display: flex;
+    height: 8rem;
+	top: 0;
+    width: 100vw;
+    align-items: center;
+    z-index: 1;
+}
+
+.pause-game {
+	position: absolute;
+	left: 1rem;
+	top: 1rem;
+}
+
+button,
+.button {
+	font-size: 2rem;
+	padding: 1rem 2rem;
+	margin: 1rem;
+	color: #fff;
+	border:  none;
+	border-radius: 0.5rem;
+	font-family: sans-serif;
+	text-decoration: none;
+	font-size: 2rem;
+	font-family: sans-serif;
+	background-color: gray;
+}
+
+.skip-level {
+	display: none;
+	background-color: aquamarine;
+}
+
+input {
+	font-size: 2rem;
+	font-family: sans-serif;
+	padding: 1rem 1rem;
+}
+
+button:hover,
+.button:hover {
+	cursor: pointer;
+	box-shadow: 0 0 10px rgba();
+}
+
+.click-submit {
+	background-color: cornflowerblue;
+	border: solid navy 9px;
+	text-indent: -9999rem;
+	width: 14rem;
+	height: 14rem;
+	border-radius: 999rem;
+}
+
+.game-button {
+	background-color: blue;
+}
+
+.main-menu,
+.resume-game {
+	display: none;
+}
+
+.main-menu {
+	background-color: red;
+}
+
+.score-and-timer {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	font-size: 2rem;
+	font-family: sans-serif;
+}
+
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.8);
+}
+
+.color-wrapper {
+	display: flex;
+	margin-bottom: 1rem;
+	align-items: center;
+}
+
+.color-dot {
+	width: 4rem;
+	height: 4rem;
+	border-radius: 99rem;
+	border: solid 2px #ccc;
+	text-indent: -9999px;
+	margin-left: 1rem;
+}
+
+.stage-wrapper {
+	display: flex;
+}
+
+.red {
+	background-color: red;
+}
+
+.green {
+	background-color: green;
+}
+
+.blue {
+	background-color: blue;
+}
+
+.yellow {
+	background-color: yellow;
+}
+
+.orange {
+	background-color: orange;
+}
+
+.purple {
+	background-color: purple;
+}
