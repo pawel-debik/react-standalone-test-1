@@ -61,11 +61,12 @@ $( document ).ready(function() {
     });
 
     $('.color-submit').click(function(e){
-        $('.color-input').val('');
         someFunction();
+        $('.color-input').val('');
     });
 
-    function someFunction() {if ( $('.color-input').val().toLowerCase() == $currentColor ) {
+    function someFunction() {
+        if ( $('.color-input').val().toLowerCase() == $currentColor ) {
             $score++;
             $('.score').text($score);
         }
