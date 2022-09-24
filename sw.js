@@ -3,6 +3,12 @@ var filesToCache = [
   '/',
   '/index.html',
   '/styles/style.css',
+  '/color-game/assets/css/opening-screen.css',
+  '/color-game/assets/css/game.css',
+  '/color-game/assets/css/reset.css',
+  '/clicker-game/assets/css/opening-screen.css',
+  '/clicker-game/assets/css/game.css',
+  '/clicker-game/assets/css/reset.css',
 ];
 
 /* Start the service worker and cache all of the app's content */
