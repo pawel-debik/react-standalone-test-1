@@ -5,6 +5,10 @@ $( document ).ready(function() {
         $('.overlay').css('display','flex');
         $('.settings-button').toggle();
         $(this).toggle();
+
+        if ( localStorage.getItem('colors-plus') == 1 ) {
+            $('#colors-plus').prop('checked', true);
+        }
     });
 
     $('.cancel-settings-button').on('click', function(e) {
@@ -14,6 +18,17 @@ $( document ).ready(function() {
         $(this).toggle();
     });
 
+    $('#colors-plus').change(function() {
+        console.log('test');
+
+        if ( $('#colors-plus').is(':checked') ) {
+            localStorage.setItem('colors-plus', '1');
+        } else {
+            localStorage.setItem('colors-plus', '0');
+        }
+        
+        console.log( localStorage.getItem('colors-plus') );
+    });
 
 
 });

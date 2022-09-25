@@ -1,6 +1,11 @@
 $( document ).ready(function() {
 
     $colorArray = ["red", "green", "blue", "yellow", "orange", "purple"]; 
+
+    if ( localStorage.getItem('colors-plus') == 1 ) {
+        $colorArray = ["red", "green", "blue", "yellow", "orange", "purple", "brown", "cyan", "pink"]; 
+    }
+
     $currentColor = $colorArray[Math.floor(Math.random()*$colorArray.length)];
     $score = 0;
     var timeHandicap = 0;
@@ -55,7 +60,6 @@ $( document ).ready(function() {
 
     $(document).on('keypress',function(e) {
         if(e.which == 13) {
-        $('.color-input').val('');
             someFunction();
         }
     });
