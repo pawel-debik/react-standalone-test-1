@@ -153,6 +153,7 @@ $( document ).ready(function() {
         e.preventDefault();
         isPaused = true;
         $('.resume-game').toggle();
+        $('.restart-game').toggle();
         $('.main-menu').toggle();
         $('.overlay').toggle();
         $(this).toggle();
@@ -162,11 +163,15 @@ $( document ).ready(function() {
         e.preventDefault();
         isPaused = false;
         $('.pause-game').toggle();
+        $('.restart-game').toggle();
         $('.main-menu').toggle();
         $('.overlay').toggle();
         $(this).toggle();
     });
 
-
+    $('.restart-game').on('click', function(e) {
+        e.preventDefault();
+        location.reload();
+    });
 
 });

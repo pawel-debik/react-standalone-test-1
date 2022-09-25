@@ -83,8 +83,13 @@ button:hover,
 }
 
 .main-menu,
-.resume-game {
+.resume-game,
+.restart-game {
 	display: none;
+}
+
+.restart-game {
+	background-color: orange;
 }
 
 .main-menu {
