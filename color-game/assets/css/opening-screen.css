@@ -34,6 +34,10 @@ h1 {
 	display: block;
 }
 
+.confirm-settings-button {
+	background-color: darkolivegreen;
+}
+
 .button {
 	font-size: 2rem;
 	padding: 1rem 2rem;

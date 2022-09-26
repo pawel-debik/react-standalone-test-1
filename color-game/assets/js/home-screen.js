@@ -9,18 +9,20 @@ $( document ).ready(function() {
         if ( localStorage.getItem('colors-plus') == 1 ) {
             $('#colors-plus').prop('checked', true);
         }
+
+        if ( localStorage.getItem('negative-score') == 1 ) {
+            $('#negative-score').prop('checked', true);
+        }
     });
 
-    $('.cancel-settings-button').on('click', function(e) {
+    $('.confirm-settings-button').on('click', function(e) {
         e.preventDefault();
         $('.overlay').css('display','none');
-        $('.cancel-settings-button').toggle();
+        $('.confirm-settings-button').toggle();
         $(this).toggle();
     });
 
     $('#colors-plus').change(function() {
-        console.log('test');
-
         if ( $('#colors-plus').is(':checked') ) {
             localStorage.setItem('colors-plus', '1');
         } else {
@@ -28,6 +30,16 @@ $( document ).ready(function() {
         }
         
         console.log( localStorage.getItem('colors-plus') );
+    });
+
+    $('#negative-score').change(function() {
+        if ( $('#negative-score').is(':checked') ) {
+            localStorage.setItem('negative-score', '1');
+        } else {
+            localStorage.setItem('negative-score', '0');
+        }
+        
+        console.log( localStorage.getItem('negative-score') );
     });
 
 

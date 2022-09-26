@@ -4,7 +4,7 @@ $( document ).ready(function() {
 
     if ( localStorage.getItem('colors-plus') == 1 ) {
         $colorArray = ["red", "green", "blue", "yellow", "orange", "purple", "brown", "cyan", "pink"]; 
-    }
+    } 
 
     $currentColor = $colorArray[Math.floor(Math.random()*$colorArray.length)];
     $score = 0;
@@ -73,6 +73,11 @@ $( document ).ready(function() {
         if ( $('.color-input').val().toLowerCase() == $currentColor ) {
             $score++;
             $('.score').text($score);
+        } else {
+            if ( localStorage.getItem('negative-score') == 1 ) {
+                $score--;
+                $('.score').text($score);
+            }
         }
 
         $currentColor = $colorArray[Math.floor(Math.random()*$colorArray.length)];
