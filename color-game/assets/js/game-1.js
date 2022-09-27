@@ -11,6 +11,9 @@ $( document ).ready(function() {
     var timeHandicap = 0;
     var scoreHandicap = 0; // to do: make this work
 
+    var clickSound = document.createElement('audio');
+    clickSound.setAttribute('src', '../assets/sounds/click-sound.wav');
+    
     var elem = document.querySelector('.timer');
     var gameTimer = setInterval(countdown, 1000);
     var isPaused = false;
@@ -62,6 +65,10 @@ $( document ).ready(function() {
         if(e.which == 13) {
             someFunction();
         }
+    });
+
+    $('button, .button').click(function(e){
+        clickSound.play();
     });
 
     $('.color-submit').click(function(e){

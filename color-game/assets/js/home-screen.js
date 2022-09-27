@@ -1,5 +1,12 @@
 $( document ).ready(function() {
 
+    var clickSound = document.createElement('audio');
+    clickSound.setAttribute('src', 'assets/sounds/click-sound.wav');
+
+    $('button, .button').click(function(e){
+        clickSound.play();
+    });
+
     $('.settings-button').on('click', function(e) {
         e.preventDefault();
         $('.overlay').css('display','flex');
