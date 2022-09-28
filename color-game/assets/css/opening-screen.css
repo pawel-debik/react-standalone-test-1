@@ -110,8 +110,15 @@ h1 {
 	flex-direction: column;
 }
 
+.setting-container {
+	padding: 3rem;
+	background-color: #fff;
+	border-radius: 0.6rem;
+	display: flex;
+	flex-direction: column;
+}
+
 .setting-container label {
-	color: #fff;
 	font-size: 1.4rem;
 }
 

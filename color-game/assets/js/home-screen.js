@@ -26,6 +26,10 @@ $( document ).ready(function() {
         if ( localStorage.getItem('ui-sounds') == 1 ) {
             $('#ui-sounds').prop('checked', true);
         }
+
+        if ( localStorage.getItem('bg-music') == 1 ) {
+            $('#bg-music').prop('checked', true);
+        }
     });
 
     $('.confirm-settings-button').on('click', function(e) {
@@ -56,6 +60,14 @@ $( document ).ready(function() {
             localStorage.setItem('ui-sounds', '1');
         } else {
             localStorage.setItem('ui-sounds', '0');
+        }
+    });
+
+    $('#bg-music').change(function() {
+        if ( $('#bg-music').is(':checked') ) {
+            localStorage.setItem('bg-music', '1');
+        } else {
+            localStorage.setItem('bg-music', '0');
         }
     });
 

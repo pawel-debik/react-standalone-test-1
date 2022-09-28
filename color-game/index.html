@@ -26,8 +26,11 @@
 	</div>
 	
 	<div class="overlay">
-		<button class="button confirm-settings-button">confirm</button>
 		<div class="setting-container">
+			<div class="setting">
+				<input type="checkbox" id="bg-music" name="bg-music" value="bg-music">
+				<label for="bg-music">Background music</label>
+			</div>
 			<div class="setting">
 				<input type="checkbox" id="colors-plus" name="colors-plus" value="colors-plus">
 				<label for="colors-plus">Colors plus</label>
@@ -40,6 +43,7 @@
 				<input type="checkbox" id="negative-score" name="negative-score" value="negative-score">
 				<label for="negative-score">Negative score ( lose score for mistyped colors )</label>
 			</div>
+			<button class="button confirm-settings-button">confirm</button>
 		</div>
 	</div>
 
@@ -49,8 +53,6 @@
 	
 	<script>
 		var x = document.getElementById("myAudio");
-
-		console.log(x); 
 
 		function playAudio() { 
 		  x.play(); 

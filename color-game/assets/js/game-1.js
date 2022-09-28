@@ -6,6 +6,16 @@ $( document ).ready(function() {
         $colorArray = ["red", "green", "blue", "yellow", "orange", "purple", "brown", "cyan", "pink"]; 
     } 
 
+
+    // WORK IN PROGRESS
+    if ( localStorage.getItem('bg-music') == 1 ) {
+        x = document.getElementById("myAudio"); 
+        x.play();
+        console.log(x);
+    } 
+
+
+
     $currentColor = $colorArray[Math.floor(Math.random()*$colorArray.length)];
     $score = 0;
     var timeHandicap = 0;
