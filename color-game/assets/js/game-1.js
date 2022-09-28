@@ -68,7 +68,9 @@ $( document ).ready(function() {
     });
 
     $('button, .button').click(function(e){
-        clickSound.play();
+        if ( localStorage.getItem('ui-sounds') == 1 ) {
+            clickSound.play();
+        }
     });
 
     $('.color-submit').click(function(e){
