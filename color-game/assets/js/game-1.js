@@ -1,5 +1,14 @@
 $( document ).ready(function() {
 
+    let interaction = 0;
+
+    if ( interaction == 0 ) {
+        $(document).on('click', function (e) {
+            interaction = 1;
+            playMusic()
+        });
+    }
+
     $colorArray = ["red", "green", "blue", "yellow", "orange", "purple"]; 
 
     if ( localStorage.getItem('colors-plus') == 1 ) {
@@ -8,11 +17,13 @@ $( document ).ready(function() {
 
 
     // WORK IN PROGRESS
-    if ( localStorage.getItem('bg-music') == 1 ) {
-        x = document.getElementById("myAudio"); 
-        x.play();
-        console.log(x);
-    } 
+    function playMusic() { 
+        if ( localStorage.getItem('bg-music') == 1 ) {
+            x = document.getElementById("myAudio"); 
+            x.play();
+            console.log(x);
+        } 
+    }
 
 
 
