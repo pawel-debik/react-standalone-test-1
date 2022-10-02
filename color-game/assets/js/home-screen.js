@@ -37,6 +37,14 @@ $( document ).ready(function() {
         $('.overlay').css('display','none');
         $('.confirm-settings-button').toggle();
         $(this).toggle();
+
+        if ( localStorage.getItem('bg-music') == 1 ) {
+            $('.toggle-bg-music-1').show();
+            $('.toggle-bg-music-2').show();
+        } else {
+            $('.toggle-bg-music-1').hide();
+            $('.toggle-bg-music-2').hide();
+        }
     });
 
     $('#colors-plus').change(function() {
@@ -71,5 +79,12 @@ $( document ).ready(function() {
         }
     });
 
+    if ( localStorage.getItem('bg-music') == 1 ) {
+        $('.toggle-bg-music-1').show();
+        $('.toggle-bg-music-2').show();
+    } else {
+        $('.toggle-bg-music-1').hide();
+        $('.toggle-bg-music-2').hide();
+    }
 
 });
