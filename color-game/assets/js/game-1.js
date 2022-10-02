@@ -1,31 +1,10 @@
 $( document ).ready(function() {
 
-    let interaction = 0;
-
-    if ( interaction == 0 ) {
-        $(document).on('click', function (e) {
-            interaction = 1;
-            playMusic()
-        });
-    }
-
     $colorArray = ["red", "green", "blue", "yellow", "orange", "purple"]; 
 
     if ( localStorage.getItem('colors-plus') == 1 ) {
         $colorArray = ["red", "green", "blue", "yellow", "orange", "purple", "brown", "cyan", "pink"]; 
     } 
-
-
-    // WORK IN PROGRESS
-    function playMusic() { 
-        if ( localStorage.getItem('bg-music') == 1 ) {
-            x = document.getElementById("myAudio"); 
-            x.play();
-            console.log(x);
-        } 
-    }
-
-
 
     $currentColor = $colorArray[Math.floor(Math.random()*$colorArray.length)];
     $score = 0;
@@ -37,7 +16,7 @@ $( document ).ready(function() {
     
     var elem = document.querySelector('.timer');
     var gameTimer = setInterval(countdown, 1000);
-    var isPaused = false;
+    var isPaused = true;
 
     var timeLeft = 30; // default value
     var game1time = 30; // default value
@@ -45,6 +24,27 @@ $( document ).ready(function() {
     var game3time = 120; // default value
 
     var goalScore = 10; // default value
+    var gameMusic = document.getElementById("myAudio"); 
+
+
+    function playMusic() { 
+        if ( localStorage.getItem('bg-music') == 1 ) {
+            gameMusic.play();
+        } 
+    }
+
+    $('.overlay').before('<button class="start-game-button">Start</button>');
+
+    // Start the game
+    $('.start-game-button').on('click', function (e) {
+        playMusic();
+        $('.start-game-button').hide();
+        $('.overlay').toggle();
+        $('.pause-game').toggle();
+        isPaused = false;
+        
+        // gameTimer = setInterval(countdown, 1000);
+    });
 
     // Set initial goal score
     $('.goal-score').text( parseInt($('.goal-score').text()) + scoreHandicap);
@@ -196,6 +196,9 @@ $( document ).ready(function() {
         $('.main-menu').toggle();
         $('.overlay').toggle();
         $(this).toggle();
+        gameMusic.pause();
+
+        // todo: pause music
     });
 
     $('.resume-game').on('click', function(e) {
@@ -206,6 +209,7 @@ $( document ).ready(function() {
         $('.main-menu').toggle();
         $('.overlay').toggle();
         $(this).toggle();
+        gameMusic.play();
     });
 
     $('.restart-game').on('click', function(e) {
