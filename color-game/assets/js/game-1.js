@@ -209,7 +209,10 @@ $( document ).ready(function() {
         $('.main-menu').toggle();
         $('.overlay').toggle();
         $(this).toggle();
-        gameMusic.play();
+        
+        if ( localStorage.getItem('bg-music') == 1 ) {
+            gameMusic.play();
+        }
     });
 
     $('.restart-game').on('click', function(e) {
