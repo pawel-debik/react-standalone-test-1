@@ -22,10 +22,11 @@
 		<button class="button settings-button">Settings</button>
 		<button onclick="playAudio()" class="button toggle-bg-music-1">Play music</button>
 		<button onclick="pauseAudio()" class="button toggle-bg-music-2">Stop music</button>
+		<button class="button help-button">Help</button>
 		<a href="../index.html">back to soundboard</a>
 	</div>
 	
-	<div class="overlay">
+	<div class="overlay settings-overlay">
 		<div class="setting-container">
 			<div class="setting">
 				<input type="checkbox" id="bg-music" name="bg-music" value="bg-music">
@@ -46,6 +47,18 @@
 			<button class="button confirm-settings-button">confirm</button>
 		</div>
 	</div>
+	
+	<div class="overlay help-overlay">
+		<div class="setting-container">
+			<p>This is some helpful text. When you go into a game then you see a text bar and a random color next to the text that says: Color: . For example, when the color ball is green, then you have to type in the text bar under the text: green. Then press submit. Beware that there are also timers in race game, levelmode and scoregame. AND there's also a score counter by the upper right part of the screen except for practice mode. </p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<button class="button close-help-overlay">OK</button>
+		</div>
+	</div>
+
 
 	<audio id="myAudio">
 		<source src="assets/sounds/color-chip.mp3">

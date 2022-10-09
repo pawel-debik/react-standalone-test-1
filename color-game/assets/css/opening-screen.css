@@ -98,6 +98,14 @@ h1 {
 	left: 1rem;
 }
 
+.help-button {
+	background-color: orange;
+	color: black;
+	position: absolute;
+	bottom: 1rem;
+	left: 1rem;
+}
+
 .overlay {
 	display: none;
 	position: fixed;
@@ -117,6 +125,13 @@ h1 {
 	display: flex;
 	flex-direction: column;
 }
+
+.help-overlay .setting-container {
+	width: 80rem;
+	max-width: calc(100vw - 10rem);
+	margin: 0 auto;
+}
+
 
 .setting-container label {
 	font-size: 1.4rem;

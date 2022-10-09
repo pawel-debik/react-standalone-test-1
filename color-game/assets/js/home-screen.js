@@ -11,7 +11,7 @@ $( document ).ready(function() {
 
     $('.settings-button').on('click', function(e) {
         e.preventDefault();
-        $('.overlay').css('display','flex');
+        $('.settings-overlay').css('display','flex');
         $('.settings-button').toggle();
         $(this).toggle();
 
@@ -32,9 +32,21 @@ $( document ).ready(function() {
         }
     });
 
+    $('.help-button').on('click', function(e) {
+        e.preventDefault();
+        $('.help-overlay').css('display','flex');
+    });
+
+    $('.close-help-overlay').on('click', function(e) {
+        e.preventDefault();
+        $('.help-overlay').css('display','none');
+    });
+
+    
+
     $('.confirm-settings-button').on('click', function(e) {
         e.preventDefault();
-        $('.overlay').css('display','none');
+        $('.settings-overlay').css('display','none');
         $('.confirm-settings-button').toggle();
         $(this).toggle();
 
