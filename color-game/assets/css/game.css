@@ -91,6 +91,7 @@ button:hover,
 
 .restart-game {
 	background-color: orange;
+	z-index: 9;
 }
 
 .main-menu {
