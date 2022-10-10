@@ -12,7 +12,7 @@ $( document ).ready(function() {
     var scoreHandicap = 0; // to do: make this work
 
     var clickSound = document.createElement('audio');
-    clickSound.setAttribute('src', '../assets/sounds/click-sound.wav');
+    clickSound.setAttribute('src', '../assets/sounds/default-button-noise.mp3');
     
     var elem = document.querySelector('.timer');
     var gameTimer = setInterval(countdown, 1000);
@@ -33,15 +33,20 @@ $( document ).ready(function() {
         } 
     }
 
+    // On first load
     $('.overlay').before('<button class="start-game-button">Start</button>');
 
     // Start the game
     $('.start-game-button').on('click', function (e) {
-        playMusic();
-        $('.start-game-button').hide();
-        $('.overlay').toggle();
-        $('.pause-game').toggle();
-        isPaused = false;
+        if( timeLeft >= 0 ) {
+            playMusic();
+            $('.start-game-button').hide();
+            $('.overlay').toggle();
+            $('.pause-game').toggle();
+            isPaused = false;
+        } else {
+            location.reload();
+        }
         
         // gameTimer = setInterval(countdown, 1000);
     });
@@ -129,10 +134,12 @@ $( document ).ready(function() {
         if ( $('body').hasClass('game-1') ) {
             if ( $score < 10 ) {
                 $('.game-1').addClass('red-bg');
-                alert('You lose. Retry.');
+                $('.overlay').toggle();
+                $('.game-wrapper').find('.start-game-button').show().text('You lose. Retry.');
             } else {
                 $('.game-1').addClass('light-blue-bg');
-                alert('You WIN! Good job.');
+                $('.overlay').toggle();
+                $('.game-wrapper').find('.start-game-button').show().text('You WIN! Good job.');
             }
         }
 
