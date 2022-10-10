@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 
     var clickSound = document.createElement('audio');
-    clickSound.setAttribute('src', 'assets/sounds/click-sound.wav');
+    clickSound.setAttribute('src', 'assets/sounds/default-button-noise.mp3');
 
     $('button, .button').click(function(e){
         if ( localStorage.getItem('ui-sounds') == 1 ) {
