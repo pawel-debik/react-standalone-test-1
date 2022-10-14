@@ -21,7 +21,7 @@ $( document ).ready(function() {
     var timeLeft = 30; // default value
     var game1time = 30; // default value
     var game2time = 90; // default value
-    var game3time = 120; // default value
+    var game3time = 3; // default value
 
     var goalScore = 10; // default value
     var gameMusic = document.getElementById("myAudio"); 
@@ -176,20 +176,22 @@ $( document ).ready(function() {
         }
 
         if ( $('body').hasClass('game-3') ) {
+            $('.overlay').toggle();
+
             if ( $score < 10 ) {
-                alert('Score: F');
+                $('.game-wrapper').find('.start-game-button').show().text('Score: F');
             } else if ( $score >= 10 && $score < 20 ) {
-                alert('Score: E');
+                $('.game-wrapper').find('.start-game-button').show().text('Score: E');
             } else if ( $score >= 20 && $score < 30 ) {
-                alert('Score: D');
+                $('.game-wrapper').find('.start-game-button').show().text('Score: D');
             } else if ( $score >= 30 && $score < 40 ) {
-                alert('Score: C');
+                $('.game-wrapper').find('.start-game-button').show().text('Score: C');
             } else if ( $score >= 40 && $score < 50 ) {
-                alert('Score: B');
+                $('.game-wrapper').find('.start-game-button').show().text('Score: B');
             } else if ( $score >= 50 && $score < 60 ) {
-                alert('Score: A');
+                $('.game-wrapper').find('.start-game-button').show().text('Score: A');
             } else if ( $score >= 60 ) {
-                alert('Score: A+');
+                $('.game-wrapper').find('.start-game-button').show().text('Score: A+');
             }
         }
     }
