@@ -21,7 +21,7 @@ $( document ).ready(function() {
     var timeLeft = 30; // default value
     var game1time = 30; // default value
     var game2time = 90; // default value
-    var game3time = 3; // default value
+    var game3time = 120; // default value
 
     var goalScore = 10; // default value
     var gameMusic = document.getElementById("myAudio"); 
