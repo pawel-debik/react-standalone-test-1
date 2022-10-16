@@ -141,3 +141,27 @@ h1 {
 .setting-container label:hover {
 	cursor: pointer;
 }
+
+.tabs {
+	display: flex;
+	border-bottom: solid #ccc 2px;
+	margin-bottom: 2rem;
+    align-items: flex-end;
+}
+
+.tabs .button {
+	margin-left: 1rem;
+	border: solid #ccc 2px;
+	color: #000;
+	background-color: #fff;
+	margin-bottom: 0;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	margin-bottom: -2px;
+}
+
+.tabs .button.active {
+	border-bottom: #fff;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+}

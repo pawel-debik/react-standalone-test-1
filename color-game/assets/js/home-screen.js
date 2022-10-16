@@ -99,4 +99,9 @@ $( document ).ready(function() {
         $('.toggle-bg-music-2').hide();
     }
 
+    $('.tabs .button').click(function(e){
+        $('.tabs .button').removeClass('active')
+        $(this).addClass('active')
+    });
+
 });
