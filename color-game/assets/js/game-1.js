@@ -24,7 +24,9 @@ $( document ).ready(function() {
     var game3time = 120; // default value
 
     var goalScore = 10; // default value
-    var gameMusic = document.getElementById("myAudio"); 
+    var gameMusic = document.getElementById("myAudio");
+
+    var progression = false;
 
 
     function playMusic() { 
@@ -43,6 +45,7 @@ $( document ).ready(function() {
             $('.start-game-button').hide();
             $('.overlay').toggle();
             $('.pause-game').toggle();
+            levelGameProgression(); // for level game ( game-2 )
             isPaused = false;
         } else {
             location.reload();
@@ -145,33 +148,18 @@ $( document ).ready(function() {
 
         if ( $('body').hasClass('game-2') ) {
             if ( $score < goalScore ) {
-                if (confirm('You lose. Retry.')) {
-                    timeHandicap = 0;
-                    scoreHandicap = 0;
-                }
+                progression = false;
+
+                $('.overlay').toggle();
+                $('.game-wrapper').find('.start-game-button').show().text('You lose. Retry.');
             } else {
                 timeLeft = game2time;
                 timeHandicap += 5;
                 scoreHandicap += 1;
-
-                if (confirm('You win. Get ready for a harder level.')) {
-
-                    timeLeft = timeLeft - timeHandicap;
-                    goalScore = goalScore + scoreHandicap;
-
-                    // update goal score
-                    $('.goal-score').text( parseInt($('.goal-score').text()) + scoreHandicap);
-
-                    // Update stage
-                    $('.stage-count').text( parseInt($('.stage-count').text()) + 1 );
-
-                    // reset timer
-                    gameTimer = setInterval(countdown, 1000);
-
-                    // reset score
-                    $('.score').text('0');
-                    $score = 0;
-                }
+                progression = true;
+                
+                $('.overlay').toggle();
+                $('.game-wrapper').find('.start-game-button').show().text('You win. Get ready for a harder level.');
             }
         }
 
@@ -228,5 +216,33 @@ $( document ).ready(function() {
         e.preventDefault();
         location.reload();
     });
+
+
+    function levelGameProgression() {
+        if ( $('body').hasClass('game-2') ) {
+            if ( progression == false ) {
+                timeHandicap = 0;
+                scoreHandicap = 0;   
+            }
+
+            if ( progression == true ) {
+                timeLeft = timeLeft - timeHandicap;
+                goalScore = goalScore + scoreHandicap;
+
+                // update goal score
+                $('.goal-score').text( parseInt($('.goal-score').text()) + scoreHandicap);
+
+                // Update stage
+                $('.stage-count').text( parseInt($('.stage-count').text()) + 1 );
+
+                // reset timer
+                gameTimer = setInterval(countdown, 1000);
+
+                // reset score
+                $('.score').text('0');
+                $score = 0;
+            }
+        }
+    }
 
 });
