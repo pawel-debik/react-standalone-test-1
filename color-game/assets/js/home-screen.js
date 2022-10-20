@@ -100,8 +100,21 @@ $( document ).ready(function() {
     }
 
     $('.tabs .button').click(function(e){
-        $('.tabs .button').removeClass('active')
-        $(this).addClass('active')
+        $('.tabs .button').removeClass('active');
+        $(this).addClass('active');
+
+        if ( $(this).hasClass('game-tab') ) {
+            console.log('game');
+            $('.settings-content').hide();
+            $('.game-settings-content').show();
+        }
+
+        if ( $(this).hasClass('music-tab') ) {
+            console.log('music');
+
+            $('.settings-content').hide();
+            $('.music-settings-content').show();
+        }
     });
 
 });

@@ -30,23 +30,28 @@
 		<div class="setting-container">
 			<div class="tabs">
 				<button class="button game-tab active">Game settings</button>	
-				<button class="button game-tab">Music settings</button>	
+				<button class="button music-tab">Music settings</button>	
 			</div>
-			<div class="setting">
-				<input type="checkbox" id="bg-music" name="bg-music" value="bg-music">
-				<label for="bg-music">Background music</label>
+			<div class="settings-content game-settings-content">
+				<div class="setting">
+					<input type="checkbox" id="bg-music" name="bg-music" value="bg-music">
+					<label for="bg-music">Background music</label>
+				</div>
+				<div class="setting">
+					<input type="checkbox" id="colors-plus" name="colors-plus" value="colors-plus">
+					<label for="colors-plus">Colors plus</label>
+				</div>
+				<div class="setting">
+					<input type="checkbox" id="ui-sounds" name="ui-sounds" value="ui-sounds">
+					<label for="ui-sounds">UI sounds</label>
+				</div>
+				<div class="setting">
+					<input type="checkbox" id="negative-score" name="negative-score" value="negative-score">
+					<label for="negative-score">Negative score ( lose score for mistyped colors )</label>
+				</div>
 			</div>
-			<div class="setting">
-				<input type="checkbox" id="colors-plus" name="colors-plus" value="colors-plus">
-				<label for="colors-plus">Colors plus</label>
-			</div>
-			<div class="setting">
-				<input type="checkbox" id="ui-sounds" name="ui-sounds" value="ui-sounds">
-				<label for="ui-sounds">UI sounds</label>
-			</div>
-			<div class="setting">
-				<input type="checkbox" id="negative-score" name="negative-score" value="negative-score">
-				<label for="negative-score">Negative score ( lose score for mistyped colors )</label>
+			<div class="settings-content music-settings-content hidden">
+				[music content placeholder]
 			</div>
 			<button class="button confirm-settings-button">Confirm</button>
 		</div>
