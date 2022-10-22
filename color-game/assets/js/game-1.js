@@ -4,7 +4,7 @@ $( document ).ready(function() {
 
     if ( localStorage.getItem('colors-plus') == 1 ) {
         $colorArray = ["red", "green", "blue", "yellow", "orange", "purple", "brown", "cyan", "pink"]; 
-    } 
+    }
 
     $currentColor = $colorArray[Math.floor(Math.random()*$colorArray.length)];
     $score = 0;
@@ -24,7 +24,26 @@ $( document ).ready(function() {
     var game3time = 120; // default value
 
     var goalScore = 10; // default value
-    var gameMusic = document.getElementById("myAudio");
+    var gameMusic = document.querySelector(".myAudio");
+
+    // to do: dry this code
+    if ( $('body').hasClass('game-1') ) {
+        if ( localStorage.getItem('race-game') ) {
+            $(".myAudio").attr("src", '../assets/sounds/'+localStorage.getItem('race-game')+'.mp3' );
+        }
+    } else if ( $('body').hasClass('game-2') ) {
+        if ( localStorage.getItem('level-game') ) {
+            $(".myAudio").attr("src", '../assets/sounds/'+localStorage.getItem('level-game')+'.mp3' );
+        }
+    } else if ( $('body').hasClass('game-3') ) {
+        if ( localStorage.getItem('score-game') ) {
+            $(".myAudio").attr("src", '../assets/sounds/'+localStorage.getItem('score-game')+'.mp3' );
+        }
+    } else if ( $('body').hasClass('game-4') ) {
+        if ( localStorage.getItem('practice') ) {
+            $(".myAudio").attr("src", '../assets/sounds/'+localStorage.getItem('practice')+'.mp3' );
+        } 
+    }
 
     var progression = false;
 

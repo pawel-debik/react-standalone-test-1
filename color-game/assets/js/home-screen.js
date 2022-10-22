@@ -30,6 +30,15 @@ $( document ).ready(function() {
         if ( localStorage.getItem('bg-music') == 1 ) {
             $('#bg-music').prop('checked', true);
         }
+
+        // display which game music was selected per level
+        $('.game-music-wrapper').each(function(){
+            let gameName = $(this).find('select').attr('id');
+
+            if ( localStorage.getItem(gameName) ) {
+                $(this).find('select').val( localStorage.getItem(gameName) );
+            }
+        });
     });
 
     $('.help-button').on('click', function(e) {
@@ -41,8 +50,6 @@ $( document ).ready(function() {
         e.preventDefault();
         $('.help-overlay').css('display','none');
     });
-
-    
 
     $('.confirm-settings-button').on('click', function(e) {
         e.preventDefault();
@@ -98,6 +105,14 @@ $( document ).ready(function() {
         $('.toggle-bg-music-1').hide();
         $('.toggle-bg-music-2').hide();
     }
+
+    // store game music
+    $('.game-music-form').find('.row').each(function(){
+        $(this).find('select').change(function() {
+            console.log($(this).find(":selected").val());
+            localStorage.setItem( $(this).attr('id'), $(this).find(":selected").val() );
+        });
+    });
 
     $('.tabs .button').click(function(e){
         $('.tabs .button').removeClass('active');
