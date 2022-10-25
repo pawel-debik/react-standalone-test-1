@@ -3,6 +3,21 @@ $( document ).ready(function() {
     var clickSound = document.createElement('audio');
     clickSound.setAttribute('src', 'assets/sounds/default-button-noise.mp3');
 
+    // to do: play selected menu music
+    $('.toggle-bg-music-1').click(function(e){
+        console.log(localStorage.getItem('menu'));
+
+        if ( localStorage.getItem('menu') != '' ) {
+            $(".myAudio").attr("src", 'assets/sounds/'+localStorage.getItem('menu')+'.mp3' );
+            document.querySelector(".myAudio").play();
+        }
+    });
+    $('.toggle-bg-music-2').click(function(e){
+        if ( localStorage.getItem('menu') != '' ) {
+            document.querySelector(".myAudio").pause();
+        }
+    });
+
     $('button, .button').click(function(e){
         if ( localStorage.getItem('ui-sounds') == 1 ) {
             clickSound.play();
@@ -58,11 +73,9 @@ $( document ).ready(function() {
         $(this).toggle();
 
         if ( localStorage.getItem('bg-music') == 1 ) {
-            $('.toggle-bg-music-1').show();
-            $('.toggle-bg-music-2').show();
+            $('.toggle-bg-music').show();
         } else {
-            $('.toggle-bg-music-1').hide();
-            $('.toggle-bg-music-2').hide();
+            $('.toggle-bg-music').hide();
         }
     });
 
@@ -99,11 +112,9 @@ $( document ).ready(function() {
     });
 
     if ( localStorage.getItem('bg-music') == 1 ) {
-        $('.toggle-bg-music-1').show();
-        $('.toggle-bg-music-2').show();
+        $('.toggle-bg-music').show();
     } else {
-        $('.toggle-bg-music-1').hide();
-        $('.toggle-bg-music-2').hide();
+        $('.toggle-bg-music').hide();
     }
 
     // store game music
@@ -133,3 +144,4 @@ $( document ).ready(function() {
     });
 
 });
+
