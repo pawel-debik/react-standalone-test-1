@@ -169,3 +169,20 @@ h1 {
 .hidden {
 	display: none;
 }
+
+.current-level-wrapper {
+	width: 10rem;
+	position: absolute;
+	bottom: 1rem;
+	left: calc(50% - 5rem);
+}
+
+.level-label {
+	text-align: center;
+}
+
+.current-level {
+	margin-top: 0;
+	font-size: 3rem;
+	text-align: center;
+}

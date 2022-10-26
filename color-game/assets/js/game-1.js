@@ -162,6 +162,7 @@ $( document ).ready(function() {
                 $('.game-1').addClass('light-blue-bg');
                 $('.overlay').toggle();
                 $('.game-wrapper').find('.start-game-button').show().text('You WIN! Good job.');
+                localStorage.setItem('level', localStorage.getItem('level') + 1);
             }
         }
 

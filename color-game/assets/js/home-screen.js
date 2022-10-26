@@ -143,5 +143,10 @@ $( document ).ready(function() {
         }
     });
 
+    // display levels
+    console.log(localStorage.getItem('level'));
+    if ( localStorage.getItem('level') ) {
+        $('.current-level').text(localStorage.getItem('level'));
+    };
 });
 
