@@ -196,10 +196,13 @@ $( document ).ready(function() {
                 $('.game-wrapper').find('.start-game-button').show().text('Score: C');
             } else if ( $score >= 40 && $score < 50 ) {
                 $('.game-wrapper').find('.start-game-button').show().text('Score: B');
+                localStorage.setItem('level', localStorage.getItem('level') + 1);
             } else if ( $score >= 50 && $score < 60 ) {
                 $('.game-wrapper').find('.start-game-button').show().text('Score: A');
+                localStorage.setItem('level', localStorage.getItem('level') + 1);
             } else if ( $score >= 60 ) {
                 $('.game-wrapper').find('.start-game-button').show().text('Score: A+');
+                localStorage.setItem('level', localStorage.getItem('level') + 1);
             }
         }
     }
@@ -254,6 +257,9 @@ $( document ).ready(function() {
 
                 // Update stage
                 $('.stage-count').text( parseInt($('.stage-count').text()) + 1 );
+                if ( $('.stage-count').text() > 5 ) {
+                    localStorage.setItem('level', localStorage.getItem('level') + 1);
+                }
 
                 // reset timer
                 gameTimer = setInterval(countdown, 1000);
