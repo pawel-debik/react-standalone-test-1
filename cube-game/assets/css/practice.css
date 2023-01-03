@@ -1,0 +1,59 @@
+:root {
+    --game-nav-height: 3rem;
+}
+  
+  
+  .practice-page {
+    background-color: #000;
+}
+
+.squares {
+    display: flex;
+    flex-wrap: wrap;
+    height: calc(100vh - var(--game-nav-height));
+    overflow: hidden;
+}
+
+.square {
+    width: 5vw;
+    height: 10vh;
+}
+
+.square.active {
+    background-color: yellow;
+}
+
+.square.active:hover {
+    cursor: pointer;
+}
+
+.game-nav {
+    width: calc( 100vw - 3rem );
+    height: var(--game-nav-height);
+    display: flex;
+    background-color: #030303;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.game-score-container {
+    display: flex;
+    min-width: 3rem;
+    margin-left: auto;
+    padding-left: 1.5rem;
+}
+
+.game-score-label,
+.game-score {
+    color: darkseagreen;
+    font-size: 1.6rem;
+}
+
+.menu-link {
+    font-family: Chakra Petch;
+    color: darkseagreen;
+    font-size: 1.6rem;
+    text-decoration: none;
+}
