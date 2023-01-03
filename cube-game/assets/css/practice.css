@@ -23,8 +23,13 @@
     background-color: yellow;
 }
 
+.square.danger:hover,
 .square.active:hover {
     cursor: pointer;
+}
+
+.danger {
+    background-color: plum;
 }
 
 .game-nav {
