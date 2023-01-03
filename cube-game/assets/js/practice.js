@@ -1,17 +1,18 @@
 $( document ).ready(function() {
-
     const squares = $('.square').length;
     let gameScore = 0;
-
 
     $( ".squares" ).on( "click", ".square.active", function() {
         // reset active squares
         $('.square').removeClass('active');
 
         let randomSquare = Math.floor((Math.random() * squares) + 1);
+        const clickSound = document.createElement('audio');
+        clickSound.setAttribute('src', '../cube-game/assets/sounds/hit.mp3');
 
         handleSquare(randomSquare);
         updateGamescore();
+        clickSound.play();
     });
 
 
@@ -34,6 +35,7 @@ $( document ).ready(function() {
 
     $('.start-practice').click(function(){
         $('.overlay').hide();
+        document.querySelector(".myAudio").play();
     });
 
 
