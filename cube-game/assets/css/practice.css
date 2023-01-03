@@ -30,6 +30,9 @@
 
 .danger {
     background-color: plum;
+    background-image: url(../images/danger.svg);
+    background-size: cover;
+    background-position: center;
 }
 
 .game-nav {
