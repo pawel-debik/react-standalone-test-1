@@ -24,13 +24,20 @@
 }
 
 .square.danger:hover,
-.square.active:hover {
+.square.active:hover,
+.square.bonus:hover {
     cursor: pointer;
 }
 
 .danger {
     background-color: plum;
-    background-image: url(../images/danger.svg);
+    /* background-image: url(../images/danger.svg); SKULL GRAPHIC*/
+    background-size: cover;
+    background-position: center;
+}
+
+.bonus {
+    background-color: greenyellow;
     background-size: cover;
     background-position: center;
 }
