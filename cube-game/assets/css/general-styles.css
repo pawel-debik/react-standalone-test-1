@@ -13,9 +13,15 @@
 
 .overlay-inner {
 	padding: 3rem;
-    background-color: darkolivegreen;
+    border: solid darkolivegreen;
 	display: flex;
-	flex-direction: column;
+    flex-direction: column;
+    width: 40rem;
+    height: 20rem;
+    max-width: 100vw;
+    max-height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .button {
