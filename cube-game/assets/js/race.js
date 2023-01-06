@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    $('.start-practice').click(function(){
+    $('.start-race').click(function(){
         $('.overlay').hide();
         document.querySelector(".myAudio").play();
     });

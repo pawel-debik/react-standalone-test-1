@@ -1,0 +1,77 @@
+:root {
+    --game-nav-height: 3rem;
+}
+
+.squares {
+    display: flex;
+    flex-wrap: wrap;
+    height: calc(100vh - var(--game-nav-height));
+    overflow: hidden;
+}
+
+.square {
+    width: 5vw;
+    height: 10vh;
+}
+
+.square.active {
+    background-color: yellow;
+}
+
+.square.danger:hover,
+.square.active:hover,
+.square.bonus:hover {
+    cursor: pointer;
+}
+
+.danger {
+    background-color: plum;
+    /* background-image: url(../images/danger.svg); SKULL GRAPHIC*/
+    background-size: cover;
+    background-position: center;
+}
+
+.bonus {
+    background-color: greenyellow;
+    background-size: cover;
+    background-position: center;
+}
+
+.game-nav {
+    width: calc( 100vw - 3rem );
+    height: var(--game-nav-height);
+    display: flex;
+    background-color: #030303;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.game-score-container {
+    display: flex;
+    min-width: 3rem;
+    margin-left: auto;
+    padding-left: 1.5rem;
+}
+
+.game-score-goal,
+.game-score-divider,
+.game-score-label,
+.game-score {
+    color: darkseagreen;
+    font-size: 1.6rem;
+}
+
+.regular-text {
+    color: darkseagreen;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.menu-link {
+    font-family: Chakra Petch;
+    color: darkseagreen;
+    font-size: 1.6rem;
+    text-decoration: none;
+}
