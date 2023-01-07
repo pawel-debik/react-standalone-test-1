@@ -1,7 +1,14 @@
 $( document ).ready(function() {
     const squares = $('.square').length;
     let gameScore = 0;
-    let raceModeGoalScore = 50;
+    let raceModeGoalScore = 0;
+    raceModeGoalScore = $('.game-score-goal').text();
+
+    let gameTimer;
+    let isPaused = true;
+    let timeLeft = 0;
+    timeLeft = $('.game-time').data('start-time');
+    console.log(timeLeft);
 
     $('.game-score-goal').text(raceModeGoalScore);
 
@@ -44,8 +51,17 @@ $( document ).ready(function() {
 
     function gameOver(message, buttonText) {
         $('.overlay').show();
-        $('.overlay-inner').prepend('<p class="regular-text">' + message + '</p>');
+        $('.overlay-text').html('').prepend('<p class="regular-text">' + message + '</p>');
         $('.start-race').text(buttonText);
+
+        // reset score and timer
+        clearTimeout(gameTimer);
+        gameScore = 0;
+        updateGamescore();
+
+        if ( $('.game-time').data('start-time') ) {
+            timeLeft = $('.game-time').data('start-time');
+        }
     }
 
     function resetSquares() {
@@ -114,5 +130,32 @@ $( document ).ready(function() {
         document.querySelector(".myAudio").play();
     });
 
+    // Countdown
+    function countdown() {
+        if ( !isPaused ) {
+            console.log('count', timeLeft);
 
+            if (timeLeft == -1) {
+                clearTimeout(gameTimer);
+                gameOver("you lose", "Try again");
+            } else {
+                $('.game-time').text(timeLeft);
+                timeLeft--;
+            }
+        }
+    }
+
+
+    $('.start-race, .start-practice').click(function(){
+        $('.overlay').hide();
+        document.querySelector(".myAudio").play();
+        isPaused = false;
+
+        // set timer
+        if ( $('.game-time').data('start-time') ) {
+            timeLeft = $('.game-time').data('start-time');
+            countdown(); // <- start countdown on click
+            gameTimer = setInterval(countdown, 1000); // cound down every second
+        }
+    });
 });

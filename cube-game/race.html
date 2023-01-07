@@ -16,11 +16,15 @@
 			<div class="back-to-main-menu">
 				<a class="menu-link" href="../cube-game/index.html"><- Back to main menu</a>
 			</div>
+			<div class="game-time-container">
+				<div class="game-time-label">Time left: </div>
+				<div data-start-time="30" class="game-time"></div>
+			</div>
 			<div class="game-score-container">
 				<div class="game-score-label">Score: </div>
 				<div class="game-score">0</div>
 				<div class="game-score-divider"> / </div>>
-				<div class="game-score-goal">0</div>
+				<div class="game-score-goal">5</div>
 			</div>
 		</div>
 		<div class="squares">
@@ -208,8 +212,9 @@
 	</div>
 	<div class="overlay">
 		<div class="overlay-inner">
+			<div class="overlay-text"></div>
 			<button class="button start-race">Start</button>
-		</div>
+		
 	</div>
 
 	<audio loop class="myAudio">

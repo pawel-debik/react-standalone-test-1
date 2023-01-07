@@ -97,7 +97,7 @@ $( document ).ready(function() {
     // Countdown
     function countdown() {
         if ( !$('body').hasClass('game-4') ) {
-            if(!isPaused) {
+            if ( !isPaused ) {
                 if (timeLeft == -1) {
                     clearTimeout(gameTimer);
                     doSomething();
