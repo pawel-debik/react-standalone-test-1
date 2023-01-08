@@ -44,7 +44,9 @@ $( document ).ready(function() {
             updateGamescore();
         }
 
-        if ( $('.game-score').text() >= raceModeGoalScore ) {
+        if ( raceModeGoalScore && ( parseInt( $('.game-score').text() ) >= raceModeGoalScore ) ) {
+            console.log( 'game score text: ', $('.game-score').text());
+            console.log('raceModeGoalScore: ', raceModeGoalScore );
             gameOver('You win', 'Try again');
         }
     });
@@ -53,6 +55,8 @@ $( document ).ready(function() {
         $('.overlay').show();
         $('.overlay-text').html('').prepend('<p class="regular-text">' + message + '</p>');
         $('.start-race').text(buttonText);
+
+        console.log('game over');
 
         // reset score and timer
         clearTimeout(gameTimer);
@@ -73,12 +77,14 @@ $( document ).ready(function() {
     function updateSquares() {
         let randomSquare = Math.floor((Math.random() * squares) + 1);
         let i = 0;
+
         $('.square').each(function() {
     
             // Each round set one active cube
-            if ( i == randomSquare && !$(this).hasClass('danger') && !$(this).hasClass('bonus') ) {
+            // if ( i == randomSquare && !$(this).hasClass('danger') && !$(this).hasClass('bonus') ) {
+            if ( i == randomSquare ) {
                 $(this).addClass('active');
-            }
+            } 
     
             i++;
         });
