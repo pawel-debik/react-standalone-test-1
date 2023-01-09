@@ -3,6 +3,8 @@ $( document ).ready(function() {
     let gameScore = 0;
     let raceModeGoalScore = 0;
     raceModeGoalScore = $('.game-score-goal').text();
+    let level = 0;
+    level = parseInt( $('.level').text() );
 
     let gameTimer;
     let isPaused = true;
@@ -47,11 +49,11 @@ $( document ).ready(function() {
         if ( raceModeGoalScore && ( parseInt( $('.game-score').text() ) >= raceModeGoalScore ) ) {
             console.log( 'game score text: ', $('.game-score').text());
             console.log('raceModeGoalScore: ', raceModeGoalScore );
-            gameOver('You win', 'Try again');
+            gameOver('You win', 'Try again', 'win');
         }
     });
 
-    function gameOver(message, buttonText) {
+    function gameOver(message, buttonText, status) {
         $('.overlay').show();
         $('.overlay-text').html('').prepend('<p class="regular-text">' + message + '</p>');
         $('.start-race').text(buttonText);
@@ -65,6 +67,11 @@ $( document ).ready(function() {
 
         if ( $('.game-time').data('start-time') ) {
             timeLeft = $('.game-time').data('start-time');
+        }
+
+        if ( status == 'win' ) {
+            updateRaceModeGoalScore(2);
+            updateLevel(1);
         }
     }
 
@@ -131,11 +138,18 @@ $( document ).ready(function() {
         $('.game-score').text( gameScore );
     }
 
-    $('.start-practice').click(function(){
-        $('.overlay').hide();
-        document.querySelector(".myAudio").play();
-    });
+    function updateLevel(increase) {
+        level = parseInt(level) + increase;
 
+        $('.level').text( level );
+    }
+
+    function updateRaceModeGoalScore(increase) {
+        raceModeGoalScore = parseInt(raceModeGoalScore) + increase;
+
+        $('.game-score-goal').text( raceModeGoalScore );
+    }
+    
     // Countdown
     function countdown() {
         if ( !isPaused ) {
@@ -151,8 +165,8 @@ $( document ).ready(function() {
         }
     }
 
-
-    $('.start-race, .start-practice').click(function(){
+    // Start games
+    $('.start-race, .start-practice, .start-level').click(function(){
         $('.overlay').hide();
         document.querySelector(".myAudio").play();
         isPaused = false;

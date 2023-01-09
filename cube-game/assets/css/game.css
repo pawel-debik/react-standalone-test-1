@@ -51,8 +51,7 @@
 .game-score-container {
     display: flex;
     min-width: 3rem;
-    margin-left: 1.5rem;
-    padding-left: 1.5rem;
+    padding-left: 3rem;
 }
 
 .game-time-container {
@@ -60,6 +59,13 @@
     margin-left: auto;
 }
 
+.level-container {
+    display: flex;
+    margin-left: 3rem;
+}
+
+.level-label,
+.level,
 .game-time-label,
 .game-time,
 .game-score-goal,
